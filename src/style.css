@@ -311,7 +311,7 @@ footer .version {
     background-color: var(--accent);
     font-size: 0.9em;
     color: var(--bg-primary);
-    padding: 1px 5px;
+    padding: 0 5px;
     border-radius: 30px;
     cursor: default;
 }
@@ -401,13 +401,13 @@ footer .version {
         transition: all 0.3s;
         font-family: 'Noto Sans HK', sans-serif;
         font-weight: 500;
-        font-size: 3em;
+        font-size: 2em;
     }
 
     nav .nav>*:hover {
         opacity: 1;
         font-weight: 900;
-        font-size: 4em;
+        font-size: 3em;
     }
 
     nav .nav-icon{
