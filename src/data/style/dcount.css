@@ -1,50 +1,3 @@
-.dcount-progress{
-    background-color: #306639;
-    max-width: 44px;
-    padding: 2px 8px;
-    border-radius: 30px;
-    position: absolute;
-    bottom: 8px;
-    left: 5px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    overflow: hidden;
-    white-space: nowrap;
-    transition: max-width 0.3s ease-in-out;
-}
-
-.dcount-progress:hover {
-    max-width: 220px;
-}
-
-.dcount-progress-text {
-    display: block;
-    max-width: 0;
-    overflow: hidden;
-    white-space: nowrap;
-    opacity: 0;
-    margin-left: 0;
-    transition: max-width 0.3s ease-in-out, opacity 0.2s ease-in-out, margin-left 0.2s ease-in-out;
-}
-
-.dcount-progress:hover > .dcount-progress-text {
-    max-width: 160px;
-    opacity: 1;
-    margin-left: 6px;
-}
-
-.dcount-progress-icon {
-    display: flex;
-    align-items: center;
-    flex: 0 0 auto;
-}
-
-.dcount-progress-icon span {
-    font-size: 12px;
-    white-space: nowrap;
-}
-
 #dcount-container {
     display: flex;
     flex-direction: row;
@@ -56,16 +9,26 @@
 }
 
 .dcount-card {
-    color: var(--theme-color);
     margin: 10px;
     width: 250px;
     display: flex;
     flex-direction: column;
     align-items: center;
     flex: 1 1 auto;
+    background: var(--bg-tertiary);
     backdrop-filter: var(--global-blur);
     -webkit-backdrop-filter: var(--global-blur);
-    border: 2px solid var(--theme-border-color);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    color: var(--text-primary);
+    transition: transform 0.3s, box-shadow 0.3s;
+    aspect-ratio: 3 / 1.5;
+    max-width: 280px;
+}
+
+.dcount-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .dcount-card-title {
@@ -74,7 +37,7 @@
     width: 100%;
     text-align: center;
     padding: 20px;
-    background-color: var(--theme-border-color);
+    color: var(--accent);
 }
 
 .dcount-card[data-today="true"] {
@@ -94,14 +57,12 @@
 }
 
 .dcount-card-day-count, .dcount-card-start-day{
-    margin-top: 20px;
     font-family: 'led-font', serif;
     font-size: 20px;
 }
 
 .dcount-card-day-count{
     background-image: linear-gradient(transparent 48%, var(--theme-highlight-color) 52%);
-    padding: 0 5px;
 }
 
 .dcount-card-start-day{
@@ -124,26 +85,6 @@
 
     #dcount-container::-webkit-scrollbar {
         display: none;
-    }
-
-    #dcount-container::scroll-button(right),  #dcount-container::scroll-button(left){
-        content: '>';
-        border: 2px solid var(--theme-border-color);
-        background-color: var(--theme-background-color);
-        color: var(--font-color);
-        padding: 10px 12px;
-        backdrop-filter: var(--global-blur);
-        cursor: pointer;
-        position: absolute;
-        right: 20px;
-        transform: translateY(-100px);
-        width: 35px;
-        text-align: center;
-    }
-
-    #dcount-container::scroll-button(left) {
-        content: '<';
-        right: 80px;
     }
 
     .dcount-card{

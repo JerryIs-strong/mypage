@@ -2,6 +2,8 @@ nav #warning_sign {
     display: flex;
     align-items: center;
     padding: 10px 20px;
+    backdrop-filter: var(--global-blur);
+    -webkit-backdrop-filter: var(--global-blur);
 }
 
 nav #warning_sign img {

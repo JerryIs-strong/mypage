@@ -41,30 +41,6 @@ function createCard(name, startDay, dayCount, isAnnual = false) {
         card.setAttribute('data-today', true);
     }
     dayCountElement.className = 'dcount-card-day-count';
-    if (!isAnnual) {
-        const negDayCount = -dayCount;
-        if (negDayCount > 0 || (negDayCount < 0 && negDayCount >= -30)) {
-            const tag = document.createElement('div');
-            tag.className = "dcount-progress";
-            const tagIcon = document.createElement('div');
-            tagIcon.className = "dcount-progress-icon";
-            tagIcon.innerHTML = '<span class="material-symbols-outlined">progress_activity</span>';
-            tag.appendChild(tagIcon);
-            const tagText = document.createElement('div');
-            tagText.className = "dcount-progress-text";
-            if (negDayCount >= 365) {
-                tagText.textContent = 'A long time ago';
-                tag.style.backgroundColor = '#cab123';
-            } else if (negDayCount < 0) {
-                tagText.textContent = 'Upcoming';
-                tag.style.backgroundColor = '#31a2ac';
-            } else {
-                tagText.textContent = 'In progress';
-            }
-            tag.appendChild(tagText);
-            card.appendChild(tag);
-        }
-    }
     card.appendChild(title);
     card.appendChild(dayCountElement);
     card.appendChild(startDayElement);

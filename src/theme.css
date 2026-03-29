@@ -11,6 +11,14 @@
     --loader-background-color: #ffffff;
     --loader-color: #4d4e4e;
     --theme-border-color: #468ee7;
-    --theme-font-color: #468ee7;
+    --theme-font-color: #58a6ff;
     --theme-highlight-color: #468ee78f;
+    --text-primary: #f0f6fc;
+    --text-secondary: #c9d1d9;
+    --bg-primary: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-tertiary: #21262d;
+    --accent: #58a6ff;
+    --accent-hover: #79c0ff;
+    --border: #30363d;
 }
