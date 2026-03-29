@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     document.documentElement.setAttribute('theme', display.theme || 'classic');
+    document.getElementById('version').innerText = `${version}`;
 
     setTimeout(() => {
         document.getElementById('preloader').style.animation = "fadeOut 0.8s cubic-bezier(0.75, 0.15, 0.16, 0.99) forwards";

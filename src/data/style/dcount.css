@@ -63,6 +63,7 @@
 
 .dcount-card-day-count{
     background-image: linear-gradient(transparent 48%, var(--theme-highlight-color) 52%);
+    padding: 0 5px;
 }
 
 .dcount-card-start-day{

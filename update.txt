@@ -1,3 +1,6 @@
+2026/03/19 26.104.0_lite_beta
+1. Say Hello to our brand new design!
+
 2026/03/01 26.103.0_lite_beta
 1. Optimize modularization logic
 
