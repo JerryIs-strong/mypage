@@ -269,9 +269,28 @@ function navigateTo(pageName) {
 
 function toggleNav(isOpen) {
     const nav = document.getElementById('nav');
+    const openBtn = document.getElementById('navOpenBtn');
+    console.log('OK');
+    
     if (isOpen) {
         nav.classList.add('open');
+        if (openBtn) openBtn.classList.add('active');
     } else {
         nav.classList.remove('open');
+        if (openBtn) openBtn.classList.remove('active');
     }
 }
+
+window.addEventListener('DOMContentLoaded', () => {
+    const navElement = document.getElementById('nav');
+    
+    // Auto-close nav when clicking on nav items
+    if (navElement) {
+        const navItems = navElement.querySelectorAll('.nav-item');
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                toggleNav(false);
+            });
+        });
+    }
+});

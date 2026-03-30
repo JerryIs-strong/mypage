@@ -1,9 +1,9 @@
 {
     "profile": {
-        "website_name": "I AM",
+        "website_name": "MY Page",
         "subtitle": "Best wishes for all 2026 DSERs!",
         "icon": {
-            "url": "./src/img/b7c68cf369f6d47d65f9055ca48b33fe.webp"
+            "url": "./src/img/96361414.webp"
         },
         "favicon": {
             "default": "./src/img/33a3af0456db6757ff0fe195b33b5f20.jpg"
