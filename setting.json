@@ -95,16 +95,6 @@
         },
         {
             "enable": true,
-            "name": "Twitter",
-            "icon": {
-                "type": "fontawesome",
-                "fontawesome": "fa-brands fa-x-twitter"
-            },
-            "url": "https://x.com/jerryis_strong",
-            "target": "blank"
-        },
-        {
-            "enable": true,
             "name": "Github",
             "icon": {
                 "type": "fontawesome",
