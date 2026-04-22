@@ -39,11 +39,6 @@
                     "name": "=Love",
                     "url": "https://equal-love.jp/",
                     "icon": "favorite"
-                },
-                {
-                    "name": "I: What's new",
-                    "url": "./update.txt",
-                    "icon": "app_badging"
                 }
             ]
         },
@@ -75,6 +70,12 @@
                         "artist": "=LOVE",
                         "album": "呪って呪って",
                         "url": "https://music.youtube.com/watch?v=hA0tpUnrD4w"
+                    },
+                    {
+                        "name": "⁠我很小朋友",
+                        "artist": "Gareth.T",
+                        "album": "THE PROTÉGÉ",
+                        "url": "https://music.youtube.com/watch?v=Ur39fMK-57o&list=RDAMVMUr39fMK-57o"
                     }
                 ]
             }
@@ -90,7 +91,7 @@
                 "type": "fontawesome",
                 "fontawesome": "fa fa-instagram"
             },
-            "url": "https://www.instagram.com/hwj7818_ynz/",
+            "url": "https://www.instagram.com/jerry_hwk/",
             "target": "blank"
         },
         {
@@ -110,7 +111,7 @@
                 "type": "fontawesome",
                 "fontawesome": "fa-brands fa-threads"
             },
-            "url": "https://www.threads.net/@hwj7818_ynz",
+            "url": "https://www.threads.net/@jerry_hwk",
             "target": "blank"
         }
     ],

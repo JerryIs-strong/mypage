@@ -26,11 +26,40 @@ function calculateDayCount(startDate, isAnnual) {
     return diffDays;
 }
 
-function createCard(name, startDay, dayCount, isAnnual = false) {
+function isEventClosed(endDate) {
+    if (!endDate) return false;
+    const today = new Date();
+    const eventEndDate = new Date(endDate);
+    eventEndDate.setHours(23, 59, 59, 999);
+    return today > eventEndDate;
+}
+
+function calculateProgress(startDate, endDate, isAnnual) {
+    if (!endDate) return null;
+    const today = new Date();
+    let start;
+    if (isAnnual) {
+        const [month, day] = startDate.split('-').map(Number);
+        start = new Date(today.getFullYear(), month - 1, day);
+        if (start > today) {
+            start = new Date(today.getFullYear() - 1, month - 1, day);
+        }
+    } else {
+        start = new Date(startDate);
+    }
+    const end = new Date(endDate);
+    if (today < start) return 0;
+    if (today > end) return 100;
+    const total = end - start;
+    const elapsed = today - start;
+    return (elapsed / total) * 100;
+}
+
+function createCard(name, startDay, dayCount, isAnnual = false, endDate = null) {
     const card = document.createElement('div');
     card.className = 'dcount-card';
     const startDayElement = document.createElement('div');
-    startDayElement.textContent = startDay;
+    startDayElement.textContent = endDate ? `${startDay} - ${endDate}` : startDay;
     startDayElement.className = 'dcount-card-start-day';
     const title = document.createElement('div');
     title.textContent = name;
@@ -64,8 +93,31 @@ function renderDayCounts() {
             data.data.forEach(event => {
                 const isAnnual = event.type === 'Annually';
                 const dayCount = calculateDayCount(event.start_date, isAnnual);
-                const card = createCard(event.name, event.start_date, dayCount, isAnnual);
-                container.appendChild(card);
+                const isClosed = isEventClosed(event.end_date);
+                if (isClosed && !isAnnual) {
+                    const card = createCard("Closed", "N/A", -999);
+                    const wrapper = document.createElement('div');
+                    wrapper.className = 'dcount-closed-wrapper';
+                    const closedLabel = document.createElement('div');
+                    closedLabel.textContent = 'Closed';
+                    closedLabel.className = 'dcount-closed-label';
+                    wrapper.appendChild(closedLabel);
+                    card.appendChild(wrapper);
+                    container.appendChild(card);
+                } else {
+                    const card = createCard(event.name, event.start_date, dayCount, isAnnual, event.end_date);
+                    if (!isClosed && event.end_date) {
+                        const progress = calculateProgress(event.start_date, event.end_date, isAnnual);
+                        const progressBar = document.createElement('div');
+                        progressBar.className = 'dcount-progress-bar';
+                        const progressFill = document.createElement('div');
+                        progressFill.className = 'dcount-progress-fill';
+                        progressFill.style.width = `${progress}%`;
+                        progressBar.appendChild(progressFill);
+                        card.appendChild(progressBar);
+                    }
+                    container.appendChild(card);
+                }
             });
         })
         .catch(error => {

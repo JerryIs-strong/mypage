@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     document.documentElement.setAttribute('theme', display.theme || 'classic');
-    document.getElementById('version').innerText = `${version}`;
 
     setTimeout(() => {
         document.getElementById('preloader').style.animation = "fadeOut 0.8s cubic-bezier(0.75, 0.15, 0.16, 0.99) forwards";
@@ -270,7 +269,6 @@ function navigateTo(pageName) {
 function toggleNav(isOpen) {
     const nav = document.getElementById('nav');
     const openBtn = document.getElementById('navOpenBtn');
-    console.log('OK');
     
     if (isOpen) {
         nav.classList.add('open');
