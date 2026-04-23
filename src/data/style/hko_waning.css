@@ -11,7 +11,7 @@ nav #warning_sign img {
     margin: 0 5px;
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 900px) {
     nav #warning_sign img{
         margin-left: 15px;
     }
