@@ -1,8 +1,13 @@
 {
     "announce": {
+        "enable": true,
         "expireDate": false,
-        "title": "📢 Announcement",
-        "content": "Welcome to my website! This website will never collect any of your data, so please feel free to browse.",
-        "button": false
+        "title": "Calling for \"Keep Android Open\"",
+        "content": "We are calling for \"Keep Android Open\". We need your support to keep Android open and free for everyone.",
+        "button": {
+            "text": "Details",
+            "link": "https://keepandroidopen.org/en/"
+        },
+        "picture": "./src/data/img/KAO.webp"
     }
 }

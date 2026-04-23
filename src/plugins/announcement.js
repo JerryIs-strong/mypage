@@ -9,8 +9,12 @@ function init() {
 function closeAnnouncement() {
   const announcement_wrapper = document.querySelector(".announcement_wrapper");
   const announcement_mask = document.querySelector(".announcement_mask");
-  announcement_wrapper.remove();
-  announcement_mask.remove();
+  announcement_wrapper.style.animation = "fadeOut 0.9s ease";
+  announcement_mask.style.animation = "fadeOut 0.9s ease";
+  setTimeout(() => {
+    announcement_wrapper.remove();
+    announcement_mask.remove();
+  }, 800);
 }
 
 function showAnnouncement(AnnouncementData, noExpireDate = false) {
@@ -24,9 +28,11 @@ function showAnnouncement(AnnouncementData, noExpireDate = false) {
   announcement_close.className = "announcement-close";
 
   announcement_title.innerText = AnnouncementData.title;
-  if (!noExpireDate) {
-    announcement_title.innerHTML += `<div class="announcement-hashtag">#有期限: ${AnnouncementData.expireDate}</div>`;
+  expireDate = AnnouncementData.expireDate;
+  if (noExpireDate) {
+    expireDate = "N/A";
   }
+  announcement_title.innerHTML += `<div class="announcement-hashtag">#Expire Date: ${expireDate}</div>`;
   announcement_content.innerHTML = AnnouncementData.content;
   announcement_close.innerHTML =
     '<span class="material-symbols-outlined"> close </span>';
@@ -53,14 +59,7 @@ function showAnnouncement(AnnouncementData, noExpireDate = false) {
     announcement_button.style.backgroundColor = AnnouncementData.button.color;
 
     announcement_button.onclick = (e) => {
-      if (buttonData.url.includes("page: ")) {
-        targetPage = buttonData.url.split("page: ")[1];
-        closeAnnouncement();
-        navigateTo(targetPage);
-      } else if (buttonData.url.includes("link: ")) {
-        const link = buttonData.url.split("link: ")[1];
-        window.open(link, "_blank");
-      }
+      window.open(buttonData.link, "_blank");
     };
     announcement_wrapper.appendChild(announcement_button);
   }
@@ -79,10 +78,9 @@ fetch("./src/data/announcement.json")
       date: new Date().toISOString().split("T")[0],
     };
 
-    if (data.announce.expireDate === "/") {
+    if (data.announce.enable === true && !data.announce.expireDate) {
       showAnnouncement(data.announce, true);
-      console.log("No Expire Date");
-    } else if (today.date <= data.announce.expireDate) {
+    } else if (data.announce.enable === true && today.date <= data.announce.expireDate) {
       showAnnouncement(data.announce);
     } else {
       closeAnnouncement();
