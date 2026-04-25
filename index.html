@@ -6,25 +6,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="description">
-    <meta name="darkreader-lock">
     <meta name="google-site-verification" content="" />
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#61779085" />
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#425f7a99" />
     <title></title>
-    <script src="https://kit.fontawesome.com/ba7cf5430a.js" crossorigin="anonymous"></script>
     <link rel="preload" href="./src/style.css" as="style" />
-    <link rel="preload" href="./src/main.js" as="script" />
     <!--Other Resources-->
     <link rel="stylesheet" href="./src/style.css" />
     <link rel="stylesheet" href="./src/theme.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="./src/customeFont.css">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@400;700&family=JetBrains+Mono:wght@400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@400;700&family=JetBrains+Mono:wght@400&display=swap" /></noscript>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" /></noscript>
+    <script async src="https://kit.fontawesome.com/ba7cf5430a.js" crossorigin="anonymous"></script>
+    <link rel="preload" href="./src/theme.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="./src/theme.css" /></noscript>
+    <link rel="preload" href="./src/customeFont.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="./src/customeFont.css" /></noscript>
     <!--Web App Icon-->
     <link rel="shortcut icon" type="image/ico" href="./favicon.png" />
     <link rel="apple-touch-icon" href="./favicon.png" />
@@ -61,7 +61,7 @@
             </div>
         </nav>
         <section class="page" p-name="Home">
-            <img class="img" id="img" alt="Avatar">
+            <img class="img" id="img" alt="Avatar" width="200" height="200" fetchpriority="high">
             <div class="text" id="text">
                 <h1 id="title"></h1>
                 <h2 id="description"></h2>
@@ -92,14 +92,14 @@
         </div>
     </div>
     <!--Important plugins-->
-    <script src="./src/plugins/private/log.js"></script>
-    <script src="./src/plugins/private/debug.js"></script>
-    <script src="./src/plugins/private/update-alert.js"></script>
-    <script src="./src/plugins/private/fetcher.js"></script>
+    <script defer src="./src/plugins/private/log.js"></script>
+    <script defer src="./src/plugins/private/debug.js"></script>
+    <script defer src="./src/plugins/private/update-alert.js"></script>
+    <script defer src="./src/plugins/private/fetcher.js"></script>
     <!--Main JS Control file-->
-    <script src="./src/main.js"></script>
+    <script defer src="./src/main.js"></script>
     <!--JS Plugins inject-->
-    <script src="./src/plugins-manager.js"></script>
+    <script defer src="./src/plugins-manager.js"></script>
 </body>
 
 </html>

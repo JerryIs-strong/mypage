@@ -120,7 +120,8 @@
         "list": [
             "dcount",
             "announcement",
-            "hko_warning"
+            "hko_warning",
+            "external_link_confirm"
         ]
     }
 }

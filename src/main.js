@@ -281,13 +281,13 @@ function toggleNav(isOpen) {
 
 window.addEventListener('DOMContentLoaded', () => {
     const navElement = document.getElementById('nav');
-    
-    // Auto-close nav when clicking on nav items
     if (navElement) {
         const navItems = navElement.querySelectorAll('.nav-item');
         navItems.forEach(item => {
             item.addEventListener('click', () => {
-                toggleNav(false);
+                if (!item.classList.contains('nav-elink')) {
+                    toggleNav(false);
+                }
             });
         });
     }
