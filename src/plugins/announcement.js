@@ -45,6 +45,9 @@ function showAnnouncement(AnnouncementData, noExpireDate = false) {
   if (AnnouncementData.picture) {
     const announcement_picture = document.createElement("img");
     announcement_picture.src = AnnouncementData.picture;
+    // Extract file name without extension for alt attribute
+    const fileName = AnnouncementData.picture.split('/').pop().split('.')[0];
+    announcement_picture.alt = fileName;
     announcement_wrapper.appendChild(announcement_picture);
   }
 
@@ -55,12 +58,11 @@ function showAnnouncement(AnnouncementData, noExpireDate = false) {
     const announcement_button = document.createElement("a");
     const buttonData = AnnouncementData.button;
     announcement_button.className = "announcement-button";
+    announcement_button.href = buttonData.link;
+    announcement_button.target = "_blank";
+    announcement_button.rel = "noopener noreferrer";
     announcement_button.innerText = AnnouncementData.button.text;
     announcement_button.style.backgroundColor = AnnouncementData.button.color;
-
-    announcement_button.onclick = (e) => {
-      window.open(buttonData.link, "_blank");
-    };
     announcement_wrapper.appendChild(announcement_button);
   }
 }
