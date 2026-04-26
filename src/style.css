@@ -476,7 +476,7 @@ nav .nav-item[n-hide="true"] {
         top: 0;
         left: 0;
         background: #3d1919;
-        z-index: 999;
+        z-index: 1001;
         display: flex;
         justify-content: center;
         align-items: center;
