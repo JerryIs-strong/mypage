@@ -1,6 +1,6 @@
 {
     "announce": {
-        "enable": true,
+        "enable": false,
         "expireDate": false,
         "title": "Calling for \"Keep Android Open\"",
         "content": "We are calling for \"Keep Android Open\". We need your support to keep Android open and free for everyone.",

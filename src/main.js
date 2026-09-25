@@ -19,27 +19,16 @@ document.addEventListener('DOMContentLoaded', () => {
     document.documentElement.setAttribute('theme', display.theme || 'classic');
 
     const preloader = document.getElementById('preloader');
-    const loaderStatusText = document.getElementById('loader-status-text');
     const loaderPercentText = document.getElementById('loader-percent');
     const loaderBarFill = document.getElementById('loader-bar-fill');
-    const loaderSteps = [
-        'Establishing protocol',
-        'Synchronizing resources',
-        'Initializing interface',
-        'Preparing experience'
-    ];
 
     let loaderProgress = 6;
-    let loaderStepIndex = 0;
     let loaderInterval = null;
 
     const updateLoaderUI = () => {
-        const step = loaderSteps[Math.min(loaderStepIndex, loaderSteps.length - 1)];
-        loaderStatusText.textContent = step;
         loaderProgress = Math.min(100, loaderProgress + Math.floor(Math.random() * 18) + 7);
         loaderPercentText.textContent = `${loaderProgress}%`;
         loaderBarFill.style.width = `${loaderProgress}%`;
-        loaderStepIndex += 1;
     };
 
     loaderInterval = setInterval(updateLoaderUI, 250);
@@ -48,7 +37,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (loaderInterval) {
             clearInterval(loaderInterval);
         }
-        loaderStatusText.textContent = 'Resources synchronized';
         loaderPercentText.textContent = '100%';
         loaderBarFill.style.width = '100%';
         preloader.classList.add('preloader--hidden');
@@ -133,7 +121,7 @@ function greetUser(greet) {
         night: greet.night || "Good night!"
     };
 
-    if (currentHour >= 6 && currentHour < 12) {
+    if (currentHour >= 0 && currentHour < 12) {
         return greetings.morning;
     } else if (currentHour >= 12 && currentHour < 18) {
         return greetings.afternoon;
@@ -145,7 +133,7 @@ function greetUser(greet) {
 }
 
 function Profile(profile, music, display, SEO, titlesetting) {
-    const { icon, favicon } = profile;
+    const { icon, favicon, tags } = profile;
     const { background, nav } = display;
     const { language, description, google_verification } = SEO;
     const { music_data: musicSetting } = music;
@@ -155,6 +143,7 @@ function Profile(profile, music, display, SEO, titlesetting) {
     document.title = profile.website_name;
     document.getElementById('title').innerText = titlesetting.method === "greeting" ? greetUser(titlesetting.advanced_setting) : `HEY! ${profile.name}`;
     document.getElementById('description').innerText = profile.subtitle;
+    ProfileTags(tags);
 
     /* Meta Tags */
     document.querySelector('meta[name="description"]')?.setAttribute('content', description || 'Powered by JerryIs-strong/Arona');
@@ -168,6 +157,48 @@ function Profile(profile, music, display, SEO, titlesetting) {
     Background(background.url);
     HolderIcon(icon);
     NavLink(nav);
+}
+
+function ProfileTags(tags = []) {
+    const tagsElement = document.getElementById('profile-tags');
+    const validTags = Array.isArray(tags)
+        ? tags.filter((tag) => typeof tag === 'string' || (tag && typeof tag.name === 'string'))
+        : [];
+
+    if (!tagsElement || validTags.length === 0) {
+        tagsElement?.remove();
+        return;
+    }
+
+    validTags.forEach((tag) => {
+        const tagName = typeof tag === 'string' ? tag.trim() : tag.name.trim();
+        if (!tagName) return;
+
+        const tagElement = document.createElement('span');
+        tagElement.className = 'profile-tag';
+        tagElement.setAttribute('role', 'listitem');
+
+        const iconName = typeof tag === 'object' && typeof tag.icon === 'string' && tag.icon.trim()
+            ? tag.icon.trim()
+            : 'tag';
+        const iconElement = document.createElement('span');
+        iconElement.className = 'material-symbols-outlined profile-tag-icon';
+        iconElement.setAttribute('aria-hidden', 'true');
+        iconElement.textContent = iconName;
+        tagElement.appendChild(iconElement);
+
+        const nameElement = document.createElement('span');
+        nameElement.textContent = tagName;
+        tagElement.appendChild(nameElement);
+        tagsElement.appendChild(tagElement);
+    });
+
+    if (tagsElement.childElementCount === 0) {
+        tagsElement.remove();
+        return;
+    }
+
+    tagsElement.setAttribute('role', 'list');
 }
 
 function Music(music, musicSetting) {

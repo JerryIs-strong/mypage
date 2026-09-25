@@ -1,7 +1,19 @@
 {
     "profile": {
         "website_name": "MY Page",
-        "subtitle": "Best wishes for all 2026 DSERs!",
+        "subtitle": "Hello, Nice to meet you~",
+        "tags":[
+            {
+                "name": "HKSYU",
+                "icon": "school"
+            },
+            {
+                "name": "FinTech"
+            },
+            {
+                "name": "ISFP"
+            }
+        ],
         "icon": {
             "url": "./src/img/96361414.webp"
         },

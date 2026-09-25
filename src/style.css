@@ -114,6 +114,36 @@ body{
     margin-bottom: 10px;
 }
 
+.profile-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    max-width: min(90vw, 700px);
+    overflow: visible;
+}
+
+.profile-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+    font-size: 12px;
+    line-height: 1.4;
+    white-space: nowrap;
+    overflow: visible;
+}
+
+.profile-tag-icon {
+    color: var(--tags-icon);
+    font-size: 16px;
+    line-height: 1;
+}
+
 .mediaBtn {
     display: flex;
     flex-direction: column;
