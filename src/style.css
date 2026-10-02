@@ -266,27 +266,35 @@ a.MusicName:-webkit-any-link {
 
 nav {
     position: fixed;
-    width: 100%;
     display: flex;
     justify-content: center;
     z-index: 996;
     align-items: center;
-    border-bottom: 1px solid var(--border);
+    padding: 10px;
+    width: fit-content;
+    top: 10px;
+    right: 10px;
 }
 
 nav .nav {
-    width: 100%;
     display: flex;
-    padding: 0 10px;
     color: var(--theme-color);
     backdrop-filter: var(--global-blur);
     -webkit-backdrop-filter: var(--global-blur);
     transition: all 0.3s ease-in-out;
     justify-content: flex-end;
+    width: fit-content;
+    border-radius: 30px;
+    background: var(--nav-bg);
+    border: 1px solid var(--border);
 }
 
 nav .key{
     height: 100%;
+    background: var(--nav-bg);
+    border: 1px solid var(--border);
+    border-radius: 30px;
+    margin-right: 10px;
 }
 
 #nav-toolbar {
@@ -389,16 +397,16 @@ nav .nav-item[n-hide="true"] {
 
     nav {
         position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
         z-index: 996;
         display: flex;
         justify-content: flex-end;
         align-items: center;
         transition: transform 0.3s ease-in-out;
         background-color: transparent;
-        border-bottom: none;
+        border-bottom: none;padding: 10px;
+        width: fit-content;
+        top: 10px;
+        right: 10px;
     }
 
     nav .nav {
@@ -427,9 +435,10 @@ nav .nav-item[n-hide="true"] {
         backdrop-filter: var(--global-blur);
         -webkit-backdrop-filter: var(--global-blur);
         border-radius: 10px;
-        background: var(--bg-tertiary);
-        padding: 5px;
+        background: var(--nav-bg);
+        padding: 10px;
         border: 1px solid var(--border);
+        border-radius: 30px;
     }
 
     .nav.open {
