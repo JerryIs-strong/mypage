@@ -92,6 +92,14 @@ body{
     border-radius: 80px;
 }
 
+.page[p-name="Home"]{
+    background-image: url(/src/img/head_background.png);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 .main .text {
     text-align: center;
     display: flex;
@@ -102,7 +110,7 @@ body{
 
 .main .text h1 {
     margin-bottom: 5px;
-    color: var(--accent);
+    color: var(--text-primary);
     margin: 20px 15px 5px 15px;
 }
 

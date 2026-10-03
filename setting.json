@@ -8,10 +8,15 @@
                 "icon": "school"
             },
             {
-                "name": "FinTech"
+                "name": "FinTech",
+                "icon": "candlestick_chart"
             },
             {
                 "name": "ISFP"
+            },
+            {
+                "name": "852",
+                "icon": "add"
             }
         ],
         "icon": {
@@ -28,7 +33,7 @@
     },
     "display": {
         "background": {
-            "url": "./src/img/b5bc7299b30a67bd1cf036202b1b2804.webp"
+            "url": "./src/img/head_background.png"
         },
         "title": {
             "method": "greeting",
@@ -72,12 +77,6 @@
                         "url": "https://music.youtube.com/watch?v=docmg0oGpXY"
                     },
                     {
-                        "name": "Really Like You",
-                        "artist": "BABYMONSTER",
-                        "album": "DRIP",
-                        "url": "https://music.youtube.com/watch?v=yrfnj9Q54m4"
-                    },
-                    {
                         "name": "君の第3ボタン",
                         "artist": "=LOVE",
                         "album": "呪って呪って",
@@ -100,6 +99,18 @@
                         "artist": "米爺,Feanna Wong",
                         "album": "旋轉木馬",
                         "url": "https://music.youtube.com/watch?v=N4hKAVbncCE"
+                    },
+                    {
+                        "name": "COVER STORY",
+                        "artist": "Billy Choi,床哥",
+                        "album": "COVER STORY",
+                        "url": "https://music.youtube.com/watch?v=FnqrCIVjv10"
+                    },
+                    {
+                        "name": "月亮代表我",
+                        "artist": "Moon Tang",
+                        "album": "月亮代表我",
+                        "url": "https://music.youtube.com/watch?v=qoBCq8AJQjg"
                     }
                 ]
             }

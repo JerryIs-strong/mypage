@@ -40,7 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
         loaderPercentText.textContent = '100%';
         loaderBarFill.style.width = '100%';
         preloader.classList.add('preloader--hidden');
-        document.getElementById('background').style.animation = "bgFadeIn 1.9s cubic-bezier(0.25, 0.04, 0, 0.89) forwards";
         setTimeout(() => {
             preloader.remove();
         }, 700);
@@ -277,12 +276,11 @@ function NavLink(links) {
 }
 
 function Background(backgroundUrl) {
-    const backgroundElement = document.getElementById('background');
+    const homePage = document.querySelector('[p-name="Home"]');
     if (backgroundUrl.length > 0 && backgroundUrl.includes('/')) {
-        backgroundElement.style.backgroundImage = `url(${backgroundUrl})`;
+        homePage.style.backgroundImage = `url(${backgroundUrl})`;
     } else {
         debug("Local wallpaper setting error", "warn");
-        document.getElementById('background').remove();
     }
 }
 
