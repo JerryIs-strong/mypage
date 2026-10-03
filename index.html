@@ -48,7 +48,7 @@
     <div class="background" id="background"></div>
     <div class="main" id="main">
         <nav id="nav-toolbar">
-            <div class="key">
+            <div class="key" warning_status="false" id="navKey">
                 <div id="warning_sign"></div>
                 <button class="nav-toggle" id="navOpenBtn" onclick="toggleNav(true)">
                     <span class="material-symbols-outlined">menu</span>
@@ -75,6 +75,11 @@
         <section class="page" p-name="Day Counter">
             <div class="page-title">Day Counter</div>
             <div id="dcount-container"></div>
+        </section>
+        <section class="page" p-name="END">
+            <div class="lyric_container">
+                <p class="lyric" id="music_lyric"></p>
+            </div>
         </section>
     </div>
     <div class="share" id="share">

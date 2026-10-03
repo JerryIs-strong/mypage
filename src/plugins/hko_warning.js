@@ -13,6 +13,8 @@ async function getData() {
         const json = await response.json();
         const container = document.getElementById('warning_sign');
         if (Object.keys(json).length > 0) {
+            const keyElement = document.getElementById("navKey");
+            keyElement.setAttribute("warning_status", "true");
             Object.values(json).forEach(warning => {
                 if (warning.code) {
                     const warningElement = document.createElement('img');

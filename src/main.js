@@ -207,6 +207,8 @@ function Music(music, musicSetting) {
         const musicNumber = Object.keys(musicSetting).length;
         const musicRandom = Math.floor(Math.random() * musicNumber);
         const musicKey = musicSetting[musicRandom];
+        const musicLyric = musicKey.lyric || ":)";
+        const lyricElement = document.getElementById("music_lyric");
         musicElement.innerText = musicKey.name;
         musicElement.href = musicKey.url;
         if (musicKey.album || musicKey.artist) {
@@ -218,6 +220,7 @@ function Music(music, musicSetting) {
         }
         musicElement.innerText = musicKeyName;
         musicElement.title = musicKeyName;
+        lyricElement.innerText = musicLyric;
         const currentMusic = {
             name: musicKey.name,
             artist: musicKey.artist

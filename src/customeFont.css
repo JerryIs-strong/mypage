@@ -2,3 +2,8 @@
     font-family: led-font;
     src: url(./data/fonts/TickingTimebombBB.ttf) format("truetype");
 }
+
+@font-face {
+    font-family: CYLY;
+    src: url(./data/fonts/ChenYuluoyan-Thin-Monospaced.ttf) format("truetype");
+}

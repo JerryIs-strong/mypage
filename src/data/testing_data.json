@@ -1,0 +1,23 @@
+{
+    "WFROST": {
+    "name": "霜凍警告",
+    "code": "WFROST",
+    "actionCode": "ISSUE",
+    "issueTime": "2020-09-24T11:15:00+08:00",
+    "updateTime": "2020-09-24T11:15:00+08:00"
+    },
+    "WHOT": {
+    "name": "酷熱天氣警告",
+    "code": "WHOT",
+    "actionCode": "ISSUE",
+    "issueTime": "2020-09-24T07:00:00+08:00",
+    "updateTime": "2020-09-24T07:00:00+08:00"
+    },
+    "WCOLD": {
+    "name": "寒冷天氣警告",
+    "code": "WCOLD",
+    "actionCode": "ISSUE",
+    "issueTime": "2020-09-24T11:15:00+08:00",
+    "updateTime": "2020-09-24T11:15:00+08:00"
+    }
+}
