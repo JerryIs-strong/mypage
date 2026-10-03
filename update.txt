@@ -1,3 +1,7 @@
+2026/10/04 26.105.0_lite_stable
+1. The project is now in stable version
+2. Minor update to improve user experience and performance
+
 2026/03/19 26.104.0_lite_beta
 1. Say Hello to our brand new design!
 
