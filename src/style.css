@@ -262,7 +262,6 @@ body{
     padding: 10px;
     margin: 0 20px;
     margin-bottom: 15px;
-    max-width: 400px;
 }
 
 a.MusicName:-webkit-any-link {
@@ -592,10 +591,6 @@ nav .nav-item[n-hide="true"] {
 
     .nav-item {
         flex-direction: row-reverse;
-    }
-
-    .share{
-        align-items: center;
     }
 }
 
