@@ -31,6 +31,16 @@ body{
     display: none;
 }
 
+.bg{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    z-index: -1;
+}
+
 .page {
     width: 100%;
     display: flex;
@@ -93,11 +103,7 @@ body{
 }
 
 .page[p-name="Home"]{
-    background-image: url(/src/img/head_background.png);
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-color: transparent;
 }
 
 .main .text {

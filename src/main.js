@@ -276,9 +276,9 @@ function NavLink(links) {
 }
 
 function Background(backgroundUrl) {
-    const homePage = document.querySelector('[p-name="Home"]');
+    const homePage = document.getElementById('bg');
     if (backgroundUrl.length > 0 && backgroundUrl.includes('/')) {
-        homePage.style.backgroundImage = `url(${backgroundUrl})`;
+        homePage.src = backgroundUrl;
     } else {
         debug("Local wallpaper setting error", "warn");
     }
